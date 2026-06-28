@@ -31,5 +31,5 @@ jobs:
         env:
           # Placeholder values so the build doesn't fail without real secrets
           NEXT_PUBLIC_SUPABASE_URL: https://placeholder.supabase.co
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: placeholder
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: placeholder
           ANTHROPIC_API_KEY: placeholder
