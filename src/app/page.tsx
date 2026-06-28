@@ -13,11 +13,11 @@ export default function LandingPage() {
           <span className="text-xl font-bold text-[#1a0f2e]">Lerni</span>
         </div>
         <div className="flex gap-3">
-          <Link href="/parent/dashboard" className="text-sm font-medium text-[#6B3FA0] border border-[#6B3FA0] px-5 py-2 rounded-full hover:bg-[#ede8f5] transition-colors">
-            Parent view
+          <Link href="/login" className="text-sm font-medium text-[#6B3FA0] border border-[#6B3FA0] px-5 py-2 rounded-full hover:bg-[#ede8f5] transition-colors">
+            Log in
           </Link>
-          <Link href="/child/home" className="text-sm font-medium bg-[#6B3FA0] text-white px-5 py-2 rounded-full hover:bg-[#4a2970] transition-colors">
-            Child view →
+          <Link href="/login" className="text-sm font-medium bg-[#6B3FA0] text-white px-5 py-2 rounded-full hover:bg-[#4a2970] transition-colors">
+            Get started →
           </Link>
         </div>
       </nav>
@@ -36,10 +36,10 @@ export default function LandingPage() {
             Upload a lesson PDF or PPTX. We generate practice activities matched exactly to what your child is learning this week.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link href="/parent/upload" className="bg-[#6B3FA0] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-[#4a2970] transition-colors shadow-lg shadow-purple-200">
-              Upload school material →
+            <Link href="/login" className="bg-[#6B3FA0] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-[#4a2970] transition-colors shadow-lg shadow-purple-200">
+              Get started for free →
             </Link>
-            <Link href="/child/home" className="bg-white text-[#6B3FA0] border-2 border-[#6B3FA0] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-[#ede8f5] transition-colors">
+            <Link href="/login" className="bg-white text-[#6B3FA0] border-2 border-[#6B3FA0] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-[#ede8f5] transition-colors">
               See demo
             </Link>
           </div>
