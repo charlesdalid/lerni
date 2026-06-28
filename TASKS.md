@@ -59,20 +59,21 @@
 ## Week 3–4 — Upload + AI Pipeline
 | Status | Task |
 |--------|------|
-| ⬜ | `/upload` page — drag-and-drop file upload UI |
-| ⬜ | File validation (PDF/PPTX/DOC/DOCX, max 20MB) before upload |
-| ⬜ | Upload file to Supabase Storage (`documents/{family_id}/{child_id}/`) |
-| ⬜ | Insert `source_documents` record with status `pending` |
-| ⬜ | `lib/parsers/pdf.ts` — PDF text extraction (pdf-parse) |
-| ⬜ | `lib/parsers/pptx.ts` — PPTX text extraction (officeparser) |
-| ⬜ | `lib/ai/prompts.ts` — versioned prompts (extractConcepts, generateActivities, validateActivity) |
-| ⬜ | `lib/ai/pipeline.ts` — orchestrate: extract → generate → validate → save to DB |
-| ⬜ | `lib/ai/safety.ts` — content safety check on AI output before storing |
-| ⬜ | `POST /api/documents/process` — trigger AI pipeline after upload |
-| ⬜ | `GET /api/documents/[id]/status` — poll processing status |
-| ⬜ | Processing status page (polls every 3s, shows progress) |
-| ⬜ | Activity preview page for parent (after processing complete) |
-| ⬜ | `/admin/review` page — 🔴 review flagged activities (`needs_review=true`) before serving to children |
+| ✅ | `/upload` page — drag-and-drop UI with child/subject/year selectors |
+| ✅ | File validation (PDF/PPTX/DOC/DOCX, max 20MB) client + server-side |
+| ✅ | Upload file to Supabase Storage (`documents/{family_id}/{child_id}/`) |
+| ✅ | Insert `source_documents` record with status `processing` |
+| ✅ | `lib/parsers/pdf.ts` — PDF text extraction (pdf-parse) |
+| ✅ | `lib/parsers/pptx.ts` — Office text extraction (officeparser) |
+| ✅ | `lib/ai/prompts.ts` — versioned prompts v1.0.0 (extractConcepts, generateActivities, validateActivity) |
+| ✅ | `lib/ai/pipeline.ts` — full pipeline: extract → topic/concepts → generate → validate → save |
+| ✅ | `lib/ai/safety.ts` — content safety check on AI output before storing |
+| ✅ | `POST /api/documents/process` — full pipeline endpoint |
+| ✅ | `GET /api/documents/[id]/status` — poll processing status |
+| ✅ | Upload page polls every 3s until `ready` or `failed` |
+| ✅ | `src/types/index.ts` — shared TypeScript types for activities, pipeline, API |
+| ✅ | `/admin/review` page — 🔴 review/approve/reject flagged activities |
+| ✅ | `PATCH /api/admin/activities/[id]/review` — approve or reject action |
 
 ---
 
