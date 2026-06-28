@@ -80,14 +80,17 @@
 ## Week 5–6 — Child Session Core Loop
 | Status | Task |
 |--------|------|
-| ⬜ | Child home screen — select topic, see concept list |
-| ⬜ | `POST /api/sessions` — create session, return session ID |
-| ⬜ | `GET /api/sessions/[id]/next` — adaptive next activity (skip `needs_review=true`) |
-| ⬜ | `MultipleChoice` activity renderer (default → selected → correct/incorrect states) |
-| ⬜ | Hint system — gentle hint after 1 wrong, worked explanation after 2 wrong |
-| ⬜ | `POST /api/sessions/[id]/attempt` — record answer, return result + points |
-| ⬜ | `POST /api/sessions/[id]/complete` — close session, update streak + XP |
-| ⬜ | Session complete screen (points earned, concepts covered) |
+| ✅ | Child home screen — real topics + concepts from DB, Play button per topic |
+| ✅ | `POST /api/sessions` — create session, verify child ownership |
+| ✅ | `GET /api/sessions/[id]/next` — serves only `review_status=approved` activities, tracks attempted |
+| ✅ | `MultipleChoice` renderer — all states: idle, selected, correct, incorrect |
+| ✅ | `FillBlank` renderer — text input with variant matching |
+| ✅ | `Flashcard` renderer — flip animation + self-scoring |
+| ✅ | Hint system — gentle after 1st wrong, worked explanation after 2nd wrong |
+| ✅ | `POST /api/sessions/[id]/attempt` — records attempt, calculates points |
+| ✅ | `POST /api/sessions/[id]/complete` — closes session, updates XP + streak |
+| ✅ | Session complete screen — XP, accuracy, streak display |
+| ✅ | `/child/session/[id]` — live session with real activity cycling |
 
 ---
 
