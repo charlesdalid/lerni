@@ -40,17 +40,19 @@
 ## Week 1–2 — Auth + Child Profile 🔴
 | Status | Task |
 |--------|------|
-| ⬜ | `middleware.ts` — protect `/dashboard`, `/upload`, `/session` routes |
-| ⬜ | `/signup` page — email + password form |
-| ⬜ | `/login` page — email + password form |
-| ⬜ | Email verification flow (Supabase handles sending) |
-| ⬜ | 🔴 `/consent` page — COPPA parental consent screen before any child data |
-| ⬜ | 🔴 `recordParentalConsent()` — insert into `consent_records` table |
-| ⬜ | Family record created on signup (insert into `families`) |
-| ⬜ | Add child profile form (name, year level, interests) |
-| ⬜ | Parent dashboard shell (empty state, nav, layout) |
-| ⬜ | Auth redirect logic (signed out → `/login`, signed in → `/dashboard`) |
-| ⬜ | `validateChildAccess()` utility — verify child belongs to authed family |
+| ✅ | `proxy.ts` — protect `/parent/*` and `/child/*` routes (Next.js 16 convention) |
+| ✅ | `/signup` page — email + password form |
+| ✅ | `/login` page — email + password form with error handling |
+| ✅ | `/check-email` page — post-signup verification notice |
+| ✅ | `/auth/callback` route — exchange email verification code for session |
+| ✅ | 🔴 `/consent` page — COPPA parental consent screen before any child data |
+| ✅ | 🔴 `recordParentalConsent()` — insert into `consent_records` table (`src/lib/auth/consent.ts`) |
+| ✅ | Family record created after consent (`families` insert) |
+| ✅ | `/onboarding` page — add first child (name, year level, interests) |
+| ✅ | Auth redirect logic (signed out → `/login`, signed in → `/dashboard`) |
+| ✅ | `validateChildAccess()` utility — verify child belongs to authed family |
+| ✅ | TopNav logout button |
+| ⬜ | Deployed to Vercel with custom domain |
 
 ---
 
